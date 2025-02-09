@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+
+
+}
+
+
+body {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.7)), url(../../Assets/abstract-digital-grid-black-background_53876-97647.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container {
+    border: 2px solid white;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border: 2px solid rgba(218, 161, 161, 0.3);
+    background: rgba(218, 161, 161, 0.233);
+    border-radius: 20px;
+    border-top-right-radius: 100px;
+    margin: 10px;
+}
+
+.signup-box h2 {
+    text-align: center;
+    font-size: 5vmin;
+    color: white;
+}
+
+.textbox input {
+    border: 2px solid orange;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.textbox input:focus {
+    outline: none;
+    border-color: #ffcc00;
+    /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.8);
+    /* Soft glow effect */
+}
+
+.btn {
+    background-color: #ff6600;
+    /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff4500;
+    /* Darker shade on hover */
+}
+
+.login-link {
+    color: white;
+    /* Text color */
+    font-size: 0.9rem;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-link a {
+    color: #ffcc00;
+    /* Yellow color for links */
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #ff6600;
+    /* Darker shade on hover */
+    text-decoration: underline;
+    /* Underline on hover */
+}

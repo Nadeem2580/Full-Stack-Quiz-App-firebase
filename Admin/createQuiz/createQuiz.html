@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="createQuiz.css">
+</head>
+<body>
+    <div class="navbar">
+        <div><h1> Create Quiz </h1></div>
+        <div class="list">
+            <a href="../../Admin/dashboard/dahsboard.html">Admin Dashboard</a>
+            <a href="../quizListing/quizList.html">Quiz Lists</a>
+            <button onclick="signout()">Log out <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </div>
+
+    <nav class="mainContainer">
+        <div class="createQuiz">
+            <h1>Create Quiz</h1>
+            <div class="line"></div>
+            <div class="titleSection">
+                <div>
+                    <label for="title">Title</label>
+                    <input type="text" placeholder="Title" id="title">
+                </div>
+                <div>
+                    <label for="category">Category</label>
+                    <input type="text" placeholder="Category" id="category">
+                </div>
+            </div>
+
+            <div class="questionSection">
+                <label for="question">Question</label>
+                <input type="text" placeholder="Question" id="question">
+
+                <label for="option1">Option 1</label>
+                <input type="text" placeholder="Option 1" id="option1">
+
+                <label for="option2">Option 2</label>
+                <input type="text" placeholder="Option 2" id="option2">
+
+                <label for="option3">Option 3</label>
+                <input type="text" placeholder="Option 3" id="option3">
+
+                <label for="option4">Option 4</label>
+                <input type="text" placeholder="Option 4" id="option4">
+
+                <label for="correctAns">Correct Answer</label>
+                <input type="text" placeholder="Correct Answer" id="correctAns">
+
+                <button onclick="addQuestion()">Add Question</button>
+            </div>
+
+            <div class="line"></div>
+            <button class="creatBtn" onclick="createQuiz()">Create Quiz</button>
+        </div>
+    </nav>
+    <script type="module" src="./createQuiz.js"></script>
+</body>
+</html>

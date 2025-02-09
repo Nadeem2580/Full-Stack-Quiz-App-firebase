@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Score</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./adminscore.css">
+</head>
+
+<body onload="renderScore() ;dropDownHandling()">
+
+    <div class="navbar">
+        <div>
+            <h1>All User Scores</h1>
+        </div>
+
+        <div class="list">
+            <a href="../../Admin/quizListing/quizList.html">Admin Quiz Lists</a>
+            <a href="../createQuiz/createQuiz.html">Create Quiz</a>
+            <button onclick="signout()"> Log Out<i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+
+
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </div>
+
+<div class="dropDown">
+    <select name="" id="dropDownList" onchange="filterTitle(this)">
+        <!-- <option value="">Css</option> -->
+        <!-- <option value="">JAva sCript</option> -->
+        <!-- <option value="">HTML</option> -->
+    </select>
+</div>
+    <div class="main">
+        <div class="listContainer">
+            <div class="cards">
+                <h1>Score Records</h1>
+                <div class="table-wrapper">
+                    <table id="scoreTable">
+                        <thead>
+                            <tr>
+                                <th>No#</th>
+                                <th>Name</th>
+                                <th>Quiz Name</th>
+                                <th>Score</th>
+                                <th>Wrong Ans</th>
+                                <th>Total Question</th>
+                                <th>Percentage%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                        </tbody>
+
+
+
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="./adminScore.js"></script>
+
+</html>

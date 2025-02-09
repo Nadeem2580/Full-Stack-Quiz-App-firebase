@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="./quiz.css">
+</head>
+
+<body>
+    <div class="tempContainer">
+        <div id="quizContaine">
+            <header class="">
+                <div class="container">
+                    <div>
+                        <h1 class="userName"></h1>
+                    </div>
+                    <div>
+                        <h1>Quiz Application</h1>
+
+                    </div>
+
+
+                </div>
+
+
+        </div>
+        </header>
+
+        <main>
+            <div class="quiz-container">
+                <div class="quiz-box">
+                    <h2 id="question"> </h2>
+                    <div class="options">
+                    </div>
+                    <div class="quiz-footer">
+                        <button onclick="nextQuestion()" id="nextBtn" class="btn">Next</button>
+                    </div>
+                </div>
+        </main>
+
+
+        <footer>
+            <div class="container">
+                <button onclick="openPopup()" id="submitBtn" class="btn">Submit Quiz</button>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+
+    <div class="tick-container">
+        <div class="popup">
+            <img id="tickImg" src="../../../Assets/test-result-button-speech-bubble-banner-label-test-result-vector.jpg"
+                alt="">
+            <h2>Thank you!</h2>
+            <p class="scored"></p>
+            <p class="correct"></p>
+            <p class="wrong"></p>
+            <button type="button" onclick="closePopup()">Ok</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- <div class="dis">
+      <input onclick="getScore(this)" type="radio" id="option1" name="quiz" value="B) 10">
+      <label for="option1">B) 10</label>
+  </div> -->
+
+
+
+
+
+
+
+
+</body>
+<script type="module" src="quiz.js"></script>
+
+</html>

@@ -1,0 +1,175 @@
+/* Reset for consistent styling */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Body styling */
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./Assets/realistic-neon-lights-background-design_1280668-1983.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 90%; /* Changed to 90% for responsiveness */
+    margin: auto;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    margin-top: 20px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px; /* Added padding for spacing */
+    background-color: rgba(0, 0, 0, 0.7); /* For a subtle dark background */
+}
+
+.navbar h1 {
+    font-size: 5vmin;
+    color: rgba(255, 166, 0, 0.726);
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    font-size: 1.5rem; /* Adjust font size */
+    font-weight: 600;
+}
+
+.list button {
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px;
+    color: black;
+    font-weight: 600;
+    margin-right: 10px;
+    font-size: 1.2rem; /* Adjust font size */
+}
+
+.fa-arrow-right-from-bracket {
+    color: red;
+    margin-left: 10px;
+}
+
+/* Main container */
+.main {
+    margin-top: 40px;
+}
+
+/* List Container: Used for layout of cards */
+.listContainer {
+    width: 90%; /* Changed to 90% for responsiveness */
+    margin: 20px auto;
+    padding: 40px;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    display: grid;
+    grid-gap: 20px;
+}
+
+/* Heading in ListContainer */
+.listContainer h1 {
+    font-size: 6vmin;
+}
+
+.listContainer h4 {
+    color: white;
+    font-size: 4vmin;
+}
+
+/* Cards Layout */
+.cards {
+    padding: 20px;
+    border: 2px solid orange;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    max-width: 600px;
+    min-width: 320px; /* Ensures no card gets too small */
+    text-align: center;
+    overflow: hidden;
+    color: rgb(48, 43, 43);
+    margin: 0;
+    transition: transform 0.5s;
+}
+
+/* Hover effect for cards */
+.cards:hover {
+    transform: translateY(-10px);
+}
+
+.cards h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.cards h4 {
+    font-size: 20px;
+}
+
+.cards button {
+    padding: 10px 40px;
+    border: none;
+    outline: none;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    background-color: orange;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.cards button:hover {
+    background-color: rgb(187, 122, 1);
+    color: white;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For large screens (xl) - 3 cards per row */
+@media screen and (min-width: 1200px) {
+    .listContainer {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+}
+
+/* For medium screens (md) - 2 cards per row */
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+    .listContainer {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+/* For small screens (sm) - 1 card per row */
+@media screen and (max-width: 767px) {
+    .list{
+        /* margin-left: 50px; */
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .listContainer {
+        padding: 10px;
+        grid-template-columns: 1fr; /* 1 column */
+    }
+    .navbar h1 {
+        font-size: 4vmin;
+    }
+    
+    .list a,
+    .list button {
+        font-size: 0.7rem;
+        margin: 2px;
+    }
+}
+

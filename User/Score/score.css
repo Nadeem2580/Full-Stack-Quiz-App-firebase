@@ -1,0 +1,255 @@
+/* General reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+/* Body Styling */
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./Assets/realistic-neon-lights-background-design_1280668-1983.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 80%;
+    margin: auto;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    margin-top: 20px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar h1 {
+    font-size: 5vmin;
+    color: rgba(255, 166, 0, 0.726);
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.list button {
+    border: none;
+    outline: none;
+    background-color: black;
+    border-radius: 30px;
+    padding: 10px;
+    color: white;
+    margin-right: 10px;
+}
+
+.fa-arrow-right-from-bracket {
+    color: red;
+    margin-left: 10px;
+}
+
+/* 
+ Content Container */
+.listContainer {
+    width: 80%;
+    margin: 20px auto;
+    padding: 40px;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Card Styling */
+.cards {
+    padding: 20px;
+    background-color: rgb(51, 42, 42);
+    border: 2px solid orange;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width: 100%;
+    min-width: 500px;
+    text-align: center;
+    overflow: hidden;
+    color: orange;
+    margin: 20px 20px;
+    transition: transform 0.5s;
+}
+
+.cards:hover {
+    transform: translateY(-10px);
+}
+
+.cards h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.cards button {
+    padding: 10px 40px;
+    border: none;
+    outline: none;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    background-color: orange;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.cards button:hover {
+    background-color: rgb(187, 122, 1);
+    color: white;
+}
+
+/* Table Styling */
+.table-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    border: 2px solid silver;
+    text-align: center;
+}
+
+th {
+    background-color: #857979;
+}
+
+tr:hover {
+    background-color: #4d2b2b;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Large screens (1200px and above) */
+@media screen and (min-width: 1200px) {
+    .navbar {
+        width: 70%;
+    }
+
+    .navbar h1 {
+        font-size: 4.5vmin;
+    }
+
+    .listContainer {
+        width: 70%;
+    }
+
+    .cards h1 {
+        font-size: 30px;
+    }
+
+    table {
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 12px;
+    }
+}
+
+/* Medium screens (768px - 1199px) */
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+    .navbar h1 {
+        font-size: 5vmin;
+    }
+
+    .listContainer {
+        width: 80%;
+    }
+
+    .cards h1 {
+        font-size: 28px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+
+/* Small screens (Below 768px) */
+@media screen and (max-width: 800px) {
+  /* Navbar adjustments for small screens */
+  .navbar {
+    width: 100%;
+    /* flex-direction: column; */
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .navbar h1 {
+    font-size: 4vmin;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .list {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 10px;
+  }
+.listContainer{
+    padding: 10px;
+    margin: 20px auto;
+    width: 90%;
+}
+.main{
+    
+}
+  .list a, .list button {
+    font-size: 16px;
+    margin: 5px;
+  }
+
+  .cards {
+    min-width: 100%;
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .cards h1 {
+    font-size: 24px;
+  }
+
+  table {
+    font-size: 12px;
+    overflow-x: auto;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .main h1 {
+    font-size: 5vmin;
+  }
+}

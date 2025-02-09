@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="sigup.css">
+</head>
+
+<body>
+    <div class="signup-container">
+        <div class="signup-box">
+            <h2>SignUp an Account</h2>
+            <div>
+                <div class="textbox">
+                    <input type="text" placeholder="First Name" name="firstName" id="firstName" required>
+                </div>
+                <div class="textbox">
+                    <input type="text" placeholder="Last Name" name="lastName" id="lastName" required>
+                </div>
+                <div class="textbox">
+                    <input type="tel" placeholder="Mobile Number" name="mobileNumber" oninput="numbervalid()" id="mobileNumber" required pattern="[0-9]{10}">
+
+                </div>
+                <div class="textbox">
+                    <input type="email" placeholder="Email" name="email" id="email" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" name="password" id="password" required>
+                </div>
+
+                <div class="textbox">
+                    <input type="password" placeholder="Confirm Password" name="Confirm Password" id="cPassword" required>
+                </div>
+                <button onclick="signUp()" class="btn">Sign Up</button>
+                <p class="login-link">
+                    Already have an account? <a href="../../index.html">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="signup.js" type="module"></script>
+
+</html>
