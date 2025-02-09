@@ -20,37 +20,43 @@ function toggleMenu() {
 const quizList = document.querySelector(".quizList");
 
 const callData = async () => {
-    
-    const querySnapshot = await getDocs(collection(db, "quezzes"));
-    quizList.innerHTML = ""
-    querySnapshot.forEach((doc) => {
-        quizList.innerHTML += `<div class="card">
+
+    try {
+        const querySnapshot = await getDocs(collection(db, "quezzes"));
+        quizList.innerHTML = ""
+        querySnapshot.forEach((doc) => {
+            quizList.innerHTML += `<div class="card">
         <h4>${doc.data().title} </h4>
         <h4>${doc.data().category} </h4>
         ${doc.data().isActive === true ? `<Button onclick="toggleFunc(this , 'active')" id=${doc.id} class="active">Active</Button>` : `<Button id=${doc.id} onclick="toggleFunc(this , 'inactive')" class="inActive">Inactive</Button>`}
         </div>`
-        
-        
-        
-    })
-    
-    console.log("getdData")
+        })
+
+    } catch (error) {
+        alert(error.message)
+    }
+
 }
 
-window.addEventListener("load", callData)
+window.addEventListener("load", callData);
+
 const toggleFunc = async (ele, status) => {
+try {
     const cardid = ele.id;
     const washingtonRef = doc(db, "quezzes", cardid)
     await updateDoc(washingtonRef, {
         isActive: status === "active" ? false : true
     })
-    
+
     callData()
-    
+
+} catch (error) {
+alert(error.message)    
+}
 }
 
 
-window.signout =signout
+window.signout = signout
 window.toggleFunc = toggleFunc;
 window.callData = callData;
 window.toggleMenu = toggleMenu;

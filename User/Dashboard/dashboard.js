@@ -20,7 +20,7 @@ window.authCheck = authCheck;
 
 
 const cardRender = async () => {
-
+try {
     const querySnapshot = await getDocs(collection(db, "quezzes"));
     listContainer.innerHTML = "";
     listContainer.innerHTML = ""
@@ -32,7 +32,11 @@ const cardRender = async () => {
                         <button id=${doc.id} onclick="navigateQuiz(this)">Start Quiz</button>
                     </div>`
         }
-    })
+    })    
+} catch (error) {
+    alert(error.message)
+}
+
 }
 
 window.addEventListener("load", cardRender)
@@ -44,7 +48,6 @@ const navigateQuiz = (ele) => {
 
     console.log("navigateQuiz")
 }
-
 
 window.signout = signout;
 window.navigateQuiz = navigateQuiz;

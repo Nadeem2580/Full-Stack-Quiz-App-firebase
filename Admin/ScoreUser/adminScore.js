@@ -39,40 +39,38 @@ const renderScore = async () => {
             
             </tbody>
             `
-
-
-
         })
-
-
 
     } catch (error) {
         alert("error", error.message)
-
     }
 }
 
 const dropDownHandling = async () => {
-    const dropDownList = document.querySelector("#dropDownList")
-    const querySnapshot = await getDocs(collection(db, "quezzes"))
-    dropDownList.innerHTML = ""
-    dropDownList.innerHTML += `<option value="">ALL Users Score </option>`;
-    querySnapshot.forEach((doc) => {
-        dropDownList.innerHTML += `<option value="${doc.id}">${doc.data().title}</option>`
+    try {
+        const dropDownList = document.querySelector("#dropDownList")
+        const querySnapshot = await getDocs(collection(db, "quezzes"))
+        dropDownList.innerHTML = ""
+        dropDownList.innerHTML += `<option value="">ALL Users Score </option>`;
+        querySnapshot.forEach((doc) => {
+            dropDownList.innerHTML += `<option value="${doc.id}">${doc.data().title}</option>`
 
-    })
+        })
+
+    } catch (error) {
+        alert(error.message)
+    }
 
 }
 let countNumber = 0;
 
 const filterTitle = async (ele) => {
-    console.log("CHECK");
+    try {
+        const user = JSON.parse(localStorage.getItem("user"));
 
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    if (ele.value === "") {
-        const q = query(collection(db, "scores"));
-        scoreTable.innerHTML = `
+        if (ele.value === "") {
+            const q = query(collection(db, "scores"));
+            scoreTable.innerHTML = `
             <tr>
                 <td>No#</td>
                 <td>Name</td>
@@ -83,13 +81,13 @@ const filterTitle = async (ele) => {
                 <td>Percentage%</td>
             </tr>`;
 
-        const querySnapshot = await getDocs(q);
+            const querySnapshot = await getDocs(q);
+            countNumber = 0;
 
-
-        querySnapshot.forEach(doc => {
-            const data = doc.data();
-            const per = (data.score / data.totalQues) * 100;
-            scoreTable.innerHTML += `
+            querySnapshot.forEach(doc => {
+                const data = doc.data();
+                const per = (data.score / data.totalQues) * 100;
+                scoreTable.innerHTML += `
                 <tr>
                     <td>${++countNumber}</td>
                     <td>${data.userName}</td>
@@ -99,11 +97,11 @@ const filterTitle = async (ele) => {
                     <td>${data.totalQues}</td>
                     <td>${per.toFixed(1)}%</td>
                 </tr>`;
-        });
-    } else {
+            });
+        } else {
 
-        const q = query(collection(db, "scores"), where("quizId", "==", ele.value));
-        scoreTable.innerHTML = `
+            const q = query(collection(db, "scores"), where("quizId", "==", ele.value));
+            scoreTable.innerHTML = `
             <tr>
                 <td>No#</td>
                 <td>Name</td>
@@ -114,13 +112,13 @@ const filterTitle = async (ele) => {
                 <td>Percentage%</td>
             </tr>`;
 
-        const querySnapshot = await getDocs(q);
-        countNumber = 0;
+            const querySnapshot = await getDocs(q);
+            countNumber = 0;
 
-        querySnapshot.forEach(doc => {
-            const data = doc.data();
-            const per = (data.score / data.totalQues) * 100;
-            scoreTable.innerHTML += `
+            querySnapshot.forEach(doc => {
+                const data = doc.data();
+                const per = (data.score / data.totalQues) * 100;
+                scoreTable.innerHTML += `
                 <tr>
                     <td>${++countNumber}</td>
                     <td>${data.userName}</td>
@@ -130,7 +128,10 @@ const filterTitle = async (ele) => {
                     <td>${data.totalQues}</td>
                     <td>${per.toFixed(1)}%</td>
                 </tr>`;
-        });
+            });
+        }
+    } catch (error) {
+        alert(error.message)
     }
 }
 

@@ -32,30 +32,35 @@ const questionArr = [];
 
 
 const createQuiz = async () => {
-    if (!title.value.trim() || !category.value.trim()) {
-        alert("Title and category is required");
-        return
+    try {
+        if (!title.value.trim() || !category.value.trim()) {
+            alert("Title and category is required");
+            return
+        }
+    
+        const quizesData = {
+            title: title.value.trim(),
+            category: category.value.trim(),
+            question: questionArr,
+            isActive: false
+        }
+    
+        const docRef = await addDoc(collection(db, "quezzes"), quizesData)
+        title.value = "";
+        category.value = "";
+        Question.value = "";
+        option1.value = "";
+        option2.value = "";
+        option3.value = "";
+        option4.value = "";
+        correctAns.value = "";
+    
+        alert("Quiz Created Successfully")
+        window.location.replace("../dashboard/dahsboard.html")
+        
+    } catch (error) {
+        alert(error.message)
     }
-
-    const quizesData = {
-        title: title.value.trim(),
-        category: category.value.trim(),
-        question: questionArr,
-        isActive: false
-    }
-
-    const docRef = await addDoc(collection(db, "quezzes"), quizesData)
-    title.value = "";
-    category.value = "";
-    Question.value = "";
-    option1.value = "";
-    option2.value = "";
-    option3.value = "";
-    option4.value = "";
-    correctAns.value = "";
-
-    alert("Quiz Created Successfully")
-    window.location.replace("../dashboard/dahsboard.html")
 
 }
 

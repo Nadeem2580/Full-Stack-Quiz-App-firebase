@@ -46,7 +46,7 @@ const getScoreListing = async () => {
 
         
     } catch (error) {
-        console.log("error", error)
+        alert("error", error)
     }
 }
 

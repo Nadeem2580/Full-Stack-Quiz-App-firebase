@@ -28,7 +28,7 @@ const loginHandler = async () => {
         alert("Login Successfully")
 
     } catch (error) {
-        console.log(error.message)
+        alert(error.message)
     }
 
 
@@ -48,10 +48,6 @@ const authCheck = () => {
 
 
 window.addEventListener("load", authCheck)
-
-
-
-
 
 
 window.loginHandler = loginHandler;

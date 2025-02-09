@@ -31,7 +31,7 @@ const numbervalid = () => {
 
 
 const signUp = async () => {
-
+try {
     if (firstName.value.trim().length < 3) {
         alert("Enter valid first name")
         return
@@ -83,6 +83,10 @@ const signUp = async () => {
     password.value = "";
     cPassword.value = "";
     window.location.replace("../../index.html")
+    
+} catch (error) {
+    alert(error.message)
+}
 }
 
 
